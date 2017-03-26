@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
 from mock_class import MockClass, RFDFMockClass
-import unittest
+import testcaseprint
 
 
-class MockClassC3LinearizationMROTester(unittest.TestCase):
+class MockClassC3LinearizationMROTester(testcaseprint.TestCasePrint):
 
     def test_class_with_no_parents(self):
         O = MockClass('O')
@@ -89,7 +89,7 @@ class MockClassC3LinearizationMROTester(unittest.TestCase):
         self.assertPrints(C.print_mro, expected_output)
 
 
-class MockClassRFDFLinearizationTester(unittest.TestCase):
+class MockClassRFDFLinearizationTester(testcaseprint.TestCasePrint):
 
     def test_class_with_no_parents(self):
         O = RFDFMockClass('O')
@@ -133,11 +133,9 @@ class MockClassRFDFLinearizationTester(unittest.TestCase):
         self.assertEqual(B.mro_names(), expectedB)
 
     def test_complicated_hierarchy_with_multiple_inheritance(self):
-        O1 = RFDFMockClass('O1')
-        O2 = RFDFMockClass('O2')
-        A1 = RFDFMockClass('A1', O2)
+        self.assertFalse(True)
         
 
 
 if __name__ == '__main__':
-    unittest.main()
+    testcaseprint.main()
